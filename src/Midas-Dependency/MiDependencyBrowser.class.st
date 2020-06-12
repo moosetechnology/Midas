@@ -50,7 +50,7 @@ MiDependencyBrowser >> diagram: aDiagram [
 MiDependencyBrowser >> followAction [
 	(self accept: toSelect)
 		ifFalse: [ ^ self ].
-	(toSelect isOfType: MooseGroup)
+	(toSelect isCollection)
 		ifTrue: [ self model entities: toSelect ]
 		ifFalse: [ self model entities: {toSelect} ].
 	self refresh
